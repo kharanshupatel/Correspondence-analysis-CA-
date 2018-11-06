@@ -17,10 +17,16 @@ The mass of each row is the proportion of this row in the total of the table.
 The weight of each column reflects its importance for discriminating between the variables. 
 So the weight of a column reflects the information this columns provides to the identification of a given row.
 ```
+
 ### Dataset : Weekly Earnings by Race
 ```
 The dataset contains information about the usual weekly earnings of 
 people with various races and gender: White men, White women, Black men, Black women, Asian men, 
 Asian women, Hispanic men, Hispanic women. These are the 8 rows. 
-The 5 columns are 1st decile, 1st quartile, 2nd quartile, 3rd quartile and 9th decile. 
+The 5 columns are 1st decile, 1st quartile, 2nd quartile, 3rd quartile and 9th decile.
+
+The cumulative dataset was converted to instantaneous dataset by using the Usual weekly earnings columns. After conversion
+the dataset was divided into train and test where train contained only the quartiles , whereas the test contained contained decile's.
+  
 ```
+
