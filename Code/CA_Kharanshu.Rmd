@@ -20,20 +20,6 @@ library(RColorBrewer)
 rm(list = ls())
 graphics.off()
 ```
-### Method: CA
-
-Correspondence analysis (ca) is a generalized principal component analysis tailored for the analysis of qualitative data.The goal of correspondence analysis is to transform a data table into two sets of factor scores: One for the rows and one for the columns.
-
-Rows and columns are displayed as points on the map whose coordinates are the factor scores and where the dimensions are called factors.
-
-The factor scores of the rows and the columns have the same variance. Therefore, both rows and columns can be conveniently represented in one single map.
-
-In correspondence analysis, a mass to each row and a weight to each column is assigned. The mass of each row reflects its importance in the sample. The mass of each row is the proportion of this row in the total of the table.
-The weight of each column reflects its importance for discriminating between the variables. So the weight of a column reflects the information this columns provides to the identification of a given row.
-
-### Dataset : Weekly Earnings by Race
-
-The dataset contains information about the usual weekly earnings of people with various races and gender: White men, White women, Black men, Black women, Asian men, Asian women, Hispanic men, Hispanic women. These are the 8 rows. The 5 columns are 1st decile, 1st quartile, 2nd quartile, 3rd quartile and 9th decile. 
 
 ```{r data_set}
 
@@ -64,7 +50,7 @@ WE_heat <- WE_new[ ,(1:3)]
 ```
 ## DESIGN
 
-```{r design}
+```
 
 WE_DESIGN_gender <- rep(c("Men", "Women"),4)
 WE_DESIGN_race <- rep(c("White", "Black", "Asian", "Hispanic"), each=2)
@@ -82,7 +68,7 @@ col4quart = c("greenyellow","green","green4","darkolivegreen")
 ## COMPUTATIONS
 
 # PCA
-```{r PCA}
+```
 
 resPCA <- epPCA(DATA = WE_new,
                    scale = 'SS1', # Make to use 'SS1' rather than TRUE
@@ -131,7 +117,7 @@ c002.Map.I.rot <- baseMap.i.rot$zeMap + labels4Vari
 print(c002.Map.I.rot)
 ```
 # Inference battery 
-```{r Inference Battery}
+```
 resPCA.inf <- InPosition::epPCA.inference.battery(DATA = WE_new,
                    scale = 'SS1', # Make sure to use 'SS1' rather than TRUE
                    DESIGN = WE_DESIGN_race,
@@ -142,7 +128,7 @@ resPCA.inf <- InPosition::epPCA.inference.battery(DATA = WE_new,
 
 # Bootstrap for CI:
 
-```{r Bootstrap}
+```
 BootCube.Gr <- PTCA4CATA::Boot4Mean(resPCA$ExPosition.Data$fi, 
                                  design = WE_DESIGN_race,
                                  niter = 100,
@@ -163,7 +149,7 @@ bootstrap.eigen <- data4PCCAR::boot.eigen(WE_new, nIter = 100)
 
 # CA analysis 
 
-```{r CA analysis}
+```
 
 resCA.sym  <- epCA(WE_new, symmetric = TRUE)
 
@@ -184,7 +170,7 @@ Fj   <- resCA.sym$ExPosition.Data$fj
 
 # Constraints 
 
-```{r Constraints}
+```
 # first get the constraints correct
 constraints.sym <- minmaxHelper(mat1 = Fi, mat2  = Fj)
 constraints.asym <- minmaxHelper(mat1 = Fi, mat2  = Fj.a)
