@@ -27,7 +27,7 @@ The 5 columns are 1st decile, 1st quartile, 2nd quartile, 3rd quartile and 9th d
 
 The cumulative dataset was converted to instantaneous dataset by using the Usual weekly earnings columns. 
 After conversion the dataset was divided into train and test where train contained only the quartiles, 
-whereas the test contained contained decile's.
+whereas the test contained decile's.
   
 ```
 
