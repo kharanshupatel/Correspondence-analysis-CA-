@@ -1,2 +1,1 @@
-# Correspondence-analysis-CA-
-Correspondence analysis on Weekly Earnings by Race
+# Correspondence analysis on Weekly Earnings by Race
