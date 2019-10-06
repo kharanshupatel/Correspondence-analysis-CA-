@@ -1,5 +1,5 @@
 ---
-title: "group2-Kharanshu Patel-CA"
+title: "Kharanshu Patel-Correspondence Analysis"
 author: "Kharanshu Patel"
 date: "10/6/2018"
 output: html_document
